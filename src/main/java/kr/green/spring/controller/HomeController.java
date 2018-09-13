@@ -66,4 +66,17 @@ public class HomeController {
 		System.out.println("email:"+email);
 		return "redirect:/signup";
 	}
+	@RequestMapping(value = "/login",method=RequestMethod.GET)
+	public String loginGet() {
+		
+		return "member/login";
+	}
+	@RequestMapping(value = "/login",method=RequestMethod.POST)
+	public String loginPost(String id, String password) {
+		System.out.println("id:"+id);
+		System.out.println("passwd:"+password);
+
+		return "redirect:/login";
+	}
+	
 }
