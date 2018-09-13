@@ -1,6 +1,6 @@
 package kr.green.spring.controller;
 
-import java.text.DateFormat;
+
 import java.util.Date;
 import java.util.Locale;
 
@@ -23,15 +23,13 @@ public class HomeController {
 	 * Simply selects the home view to render by returning its name.
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home(Locale locale, Model model) {
+	public String home(Locale locale, Model model,Integer num,Integer num2,Integer res) {
 		logger.info("Welcome home! The client locale is {}.", locale);
 		
-		Date date = new Date();
-		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
 		
-		String formattedDate = dateFormat.format(date);
-		
-		model.addAttribute("serverTime", formattedDate );
+		model.addAttribute("num",num);
+		model.addAttribute("num2",num2);
+		model.addAttribute("res",res);
 		
 		return "home";
 	}
@@ -43,9 +41,29 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value = "/test",method=RequestMethod.POST)
-	public String testPost(Model model,String id) {
-		System.out.println("id : "+id);
-		model.addAttribute("Company",id);
-		return "test/test";
+	public String testPost(Model model,Integer num,Integer num2) {
+		System.out.println("숫자1 : "+num);
+		System.out.println("숫자2 : "+num2);
+		if(num==null) num=0;
+		if(num2==null) num2=0;
+		Integer res = num+num2;
+		model.addAttribute("num",num);
+		model.addAttribute("num2",num2);
+		model.addAttribute("res",res);
+		return "redirect:/";
+	}
+	@RequestMapping(value = "/signup",method=RequestMethod.GET)
+	public String signupGet() {
+		
+		return "member/signup";
+	}
+	@RequestMapping(value = "/signup",method=RequestMethod.POST)
+	public String signupPost(String id, String pw,String pwconfirm,String gender,String email) {
+		System.out.println("id:"+id);
+		System.out.println("passwd:"+pw);
+		System.out.println("pwconfirm::"+pwconfirm);
+		System.out.println("gender:"+gender);
+		System.out.println("email:"+email);
+		return "redirect:/signup";
 	}
 }
