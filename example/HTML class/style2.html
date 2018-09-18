@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    /*모든 셀렉터에 대해서 border-box설정
+      가장 위에 써주는 게 좋음
+      border-box로 묶어주는이유 : 후에 새로운 border를 추가할경우
+      css가 깨지지 않도록 미리 묶어주는 역할
+      각 box-sizing은 인터넷 익스플로러/크롬/파이어폭스 마다 나뉨*/
+    *{
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+    }
+    /*부모 자식 셀렉터 :
+      직접 자손에만 스타일 적용
+      한번 건너뛰면 적용이 안된다*/
+    body>.div1{
+        color: red;
+    }
+    div>.div1{
+        color: burlywood;
+    }
+    /*부모 자손 셀렉터 :
+      body안에(부모아래에) 있는 div2(자손)전부 바뀜*/
+    body .div2{
+        color: blue;
+    }
+    /*CSS는 뒤에 나오는 구문이 마지막으로 적용되므로
+      우선순위가 높다.(최종 적용은 마지막구문)*/
+    div.div2{
+        color: yellow;
+    }
+    /*input태그이면서 text타입인 개체들의 속성 설정*/
+    input[type=text]{
+        font-weight: bold;
+    }
+    input[readonly]{
+        color: gray;
+        background-color: yellow;
+    }
+    .div3:hover{
+        color: red;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    </style>
+</head>
+<body>
+    <div>부모 자식 셀렉터 조합 예제</div>
+    <div class="div1">Hello world</div>
+    <div>
+        <div class="div1">Hello world</div>
+    </div>
+    <div class="div1">Hello world</div>
+    <hr>
+    <div>부모 자손 셀렉터 조합 예제</div>
+    <div class="div2">Hi</div>
+    <div>
+        <div class="div2">Hi</div>
+    </div>
+    <input type="text">
+    <input type="email" readonly value="123@123">
+    <hr>
+    <div>가상클래스 예제</div>
+    <div class="div3">Hello world</div>
+</body>
+</html>
