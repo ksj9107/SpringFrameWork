@@ -6,36 +6,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/spring/resources/CSS/basesignup.css">
     <title>Document</title>
 </head>
 <body>
-    <div>
-        <form action="/spring/signup" method="POST">
-            <div>
-                아이디
+    <div class="container">
+        <form action="">
+            <div class ="display-flex">
+                <div class="input-form">아이디</div>
                 <input type="text" name="id">
             </div>
-            <div>
-                비밀번호
+            <div class ="display-flex">
+                <div class="input-form">비밀번호</div>
                 <input type="password" name="pw" id="">
             </div>
-            <div>
-                비밀번호확인
+            <div class ="display-flex">
+                <div class="input-form">비밀번호확인</div>
                 <input type="password" name="pwconfirm">
             </div>
-            <div>
-                성별
+            <div class ="display-flex">
+                <div class="input-form">성별</div>
                 <label for="남">남자<input type="radio" name="gender" id="male" checked value="male"></label>
                 <label for="여">여자<input type="radio" name="gender" id="female" checked value="female"></label>
                 
             </div>
-            <div>
-                이메일
+            <div class ="display-flex">
+                <div class="input-form">이메일</div>
                 <input type="email" name="email" id="">
-                <button>이메일 확인</button>
             </div>
-            <div>제출버튼
-                <button type="submit">제출</button>
+            <div>
+                <button type="submit" id="submit">제출</button>
             </div>
            
         </form>
