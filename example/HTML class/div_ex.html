@@ -12,15 +12,15 @@
         -webkit-box-sizing: border-box;
         margin: 0;
     }
-    .container div{
+    /* .container div{
         border: solid 1px black;
-    }
+    } */
     .container>.container-header{
         border: none;
         min-width: 1100px;
         height: 160px;
         border-top: solid 1px gray;
-        border-bottom: solid 1px gray;
+        border-bottom: solid 2px rgb(170, 166, 166);
         background: white;
     }
     .container-header>div{
@@ -30,60 +30,59 @@
         width: 1080px;
         height: 32px;
         margin: 0 auto;
-        
+        border: solid 1px rgb(160, 179, 179);
     }
     .container-header>.new{
         width: 800px;
         height: 100px;
-        margin: 8px auto;
-        border:none;
-       
+        margin: 4px auto;
     }
     .new>div{
         display: inline-block;
+        border: solid 2px rgb(24, 211, 24);
     }
     .new>.logo{
-        width: 120px;
-        height: 50px;
-        margin: 25px 8px 25px 8px;
+        width: 202px;
+        height: auto;
+        margin: 20px 8px 20px 50px;
     }
+    
     .new>.greenwindow{
-        width: 400px;
+        width: 500px;
         height: 50px;
         margin: 25px 8px 25px 8px;
     }
-    .new>.search{
-        width: 120px;
-        height: 50px;
-        margin: 25px 8px 25px 8px;
+    .greenwindow>.search{
+        width: 70px;
+        height: 46px;
+        float: right;
+        border: solid 2px rgb(24, 211, 24);
+        background: rgb(24, 211, 24);
     }
     .container{
         min-width: 1100px;
-        height: 1500px;
-        background: darkgray;
+        background: rgba(197, 195, 195, 0.808);
     }
     .container>.container-body{
         width: 1100px;
         height: 1466px;
+        font-size: 0px;
         margin: 0 auto;
         padding: 8px 10px 0px 10px;
-        border: none;
-        
     }
     .container>.container-body>*{
         font-size: 14px;
+        border:none;
     }
     .container-body>.left-box{
         width: 740px;
         height: 428px;
         float:left;
-        border: none;
     }
     .container-body>.right-box{
         width: 330px;
         height: 428px;
         float: right;
-        border: none;
     }
     .left-box>div{
         background: white;
@@ -117,9 +116,11 @@
     <div class="container">
         <div class="container-header">
             <div class="new">
-                <div class="logo"></div>
-                <div class="greenwindow"></div>
-                <div class="search"></div>
+                <img class="logo" src="naverlogo.JPG" width="150px" height="50px">
+                <div class="greenwindow">
+                    <div class="search"></div>
+                </div>
+                
             </div>
             <div class="menu"></div>
         </div>
