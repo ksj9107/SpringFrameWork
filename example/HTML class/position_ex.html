@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    div{
+        display: inline-block;
+        height: 50px;
+        width: 50px;
+        border: solid 1px lightgray;
+        text-align: center;
+        color: white;
+        background: red;
+    }
+    #down:hover{
+        position: relative;
+        left: 20px;
+        top: 20px;
+        background: green;
+    }
+    #up:hover{
+        position: relative;
+        right: 20px;
+        bottom: 20px;
+        background: blue;
+    }
+    #right:hover{
+        position: relative;
+        left: 20px;
+        bottom: 20px;
+        background: skyblue;
+    }
+    #left:hover{
+        position: relative;
+        right: 20px;
+        top: 20px;
+        background: yellow;
+    }
+    #absolute{
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .large-box{
+        background-color: white;
+        color: black;
+        width: 500px;
+        height: 300px;
+        position: relative;
+    }
+    .absolute{
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .fixed{
+        position: fixed;
+        right: 0;
+        bottom: 0;
+    }
+    </style>
+</head>
+<body>
+    <h3>상대 배치, relative</h3>
+    <hr>
+    <div id="left">T</div>
+    <div id="down">h</div>
+    <div>a</div>
+    <div>n</div>
+    <div id="up">k</div>
+    <div id="right">s</div>
+    <hr>
+    <h3>절대 배치, absolute</h3>
+    <div id="absolute">ab1</div>
+    <div class="large-box">
+        <div class="absolute">ab2</div>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <div class="fixed">위로</div>
+</body>
+</html>
