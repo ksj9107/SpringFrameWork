@@ -56,8 +56,8 @@
         width: 70px;
         height: 46px;
         float: right;
-        border: solid 2px rgb(24, 211, 24);
-        background: rgb(24, 211, 24);
+        border: solid 2px rgb(63, 198, 40);
+        background: rgb(63, 198, 40);
     }
     .container{
         min-width: 1100px;
@@ -102,12 +102,57 @@
     
     .right-box>.signup{
         height: 100px;
+        padding: 8px 40px 8px 40px;
+        position: relative;
+    }
+    .signup>p{
+        font-size: 12px;
+        margin-bottom: 8px;
+    }
+    .signup>.signup-div{
+        width:250px;
+        height:35px; 
+        padding: 4px 0px;
+        background-color:rgb(63, 198, 40); 
+    }    
+    
+    .signup-btn{
+        width: 250px;
+        font-size: 19px;
+        font-weight: 900;
+        background-color:rgb(63, 198, 40); 
+        border: none;
+        color:white;
+    }
+    .find>a,.regist>a{
+        text-decoration: none;
+        font-size: 12px;
+    }
+    .signup-option{
+        height: 37.5px;
+        position: absolute;
+        padding-top: 8px;
+        left: 40px;
+        width: 250px;
+    }
+    .signup-option>a{
+        display: inline-block;
+        text-decoration: none
+    }
+    .regist{
+        float: right;
+    }
+    .signup-option>a:hover{
+        text-decoration: underline;
     }
     .right-box>.timesquare{
         height: 100px;
     }
     .right-box>.adverse2{
         height: 210px;
+    }
+    .gray{
+        color: gray;
     }
     
        </style>
@@ -130,7 +175,21 @@
                 <div class="news"></div>
             </div>
             <div class="right-box">
-                <div class="signup"></div>
+                <div class="signup">
+                    <p class="gray font-12">네이버를 더 안전하고 편리하게 이용하세요.</p>
+                    <div class="signup-div">
+                        <a href="#">
+                            <button class="signup-btn">
+                                <span class="buttonspan">NAVER</span>로그인
+                            </button>
+                        </a>
+                    </div>
+                    <div class="signup-option">
+                            <a class="gray font-12" href="#">아이디</a>
+                            <a class="gray font-12" href="#">비밀번호</a>
+                            <a  class="gray font-12 regist" href="#">회원가입</a>
+                    </div>
+                </div>
                 <div class="timesquare"></div>
                 <div class="adverse2"></div>
             </div>
