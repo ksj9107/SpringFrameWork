@@ -1,22 +1,25 @@
 package kr.green.spring.controller;
 
 
-import java.util.Date;
 import java.util.Locale;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import kr.green.spring.dao.AccountDao;
 
 /**
  * Handles requests for the application home page.
  */
 @Controller
 public class HomeController {
-	
+	@Autowired
+  private AccountDao accountDao;
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
 	/**
@@ -25,13 +28,13 @@ public class HomeController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model,Integer num,Integer num2,Integer res) {
 		logger.info("Welcome home! The client locale is {}.", locale);
-		
+		String email = accountDao.getEmail("stajun");
 		
 		model.addAttribute("num",num);
 		model.addAttribute("num2",num2);
-		model.addAttribute("res",res);
+		model.addAttribute("res",email);
 		
-		return "home";
+		return "member/login";
 	}
 
 	@RequestMapping(value = "/test",method=RequestMethod.GET)
@@ -52,11 +55,12 @@ public class HomeController {
 		model.addAttribute("res",res);
 		return "redirect:/";
 	}
+	
 	@RequestMapping(value = "/signup",method=RequestMethod.GET)
 	public String signupGet() {
-		
 		return "member/signup";
 	}
+	
 	@RequestMapping(value = "/signup",method=RequestMethod.POST)
 	public String signupPost(String id, String pw,String pwconfirm,String gender,String email) {
 		System.out.println("id:"+id);
@@ -72,10 +76,10 @@ public class HomeController {
 		return "member/login";
 	}
 	@RequestMapping(value = "/login",method=RequestMethod.POST)
-	public String loginPost(String id, String password) {
+	public String loginPost(String id, String password,Model model) {
 		System.out.println("id:"+id);
 		System.out.println("passwd:"+password);
-
+		if()
 		return "redirect:/login";
 	}
 	
